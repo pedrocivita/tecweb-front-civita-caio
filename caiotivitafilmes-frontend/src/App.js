@@ -28,7 +28,7 @@ function App() {
     
   const Filmes = () => {
     if (filmes.results === undefined) {
-      return <p>Digite o ano em que você nasceu!</p>
+      return <p className='label'>Digite o ano em que você nasceu!</p>
     }
     return filmes.results.map((filme) => {
       return (
@@ -44,10 +44,12 @@ function App() {
   return (
     <div className="App">
     <form onSubmit= {Movile} >
-      <div className='forms'>
-        <input type="number" onChange={(event) => setAno(event.target.value)} />
-        <button className='btn' type="submit"></button>
-      </div>
+      <div className='formatForms'>
+        <div className='forms'>
+          <input placeholder='Digite um ano...' onChange={(event) => setAno(event.target.value)} />
+          <button className='btn' type="submit"> GO </button>
+        </div>
+        </div>
     </form>
     <Filmes />
   </div>

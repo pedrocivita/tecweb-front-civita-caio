@@ -10,7 +10,7 @@ function randomInt(min, max) {
 export default function Movie(props) {
     const [rotation, setRotation] = useState(0);
     useEffect(() => {
-      setRotation(randomInt(-5, 5));
+      setRotation(randomInt(-0, 0));
     }, []);
 
     function Like(event){

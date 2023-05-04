@@ -45,8 +45,13 @@
   width: 30%;
   margin: 10px;
   padding: 10px;
-  border: 1px solid black;
   border-radius: 5px;
+
+  border-radius: 32px;
+  background: linear-gradient(145deg, #02007c, #020094);
+  box-shadow:  13px 13px 26px #010062,
+               -13px -13px 26px #0300b2;
+  
 }
 
 .body{
@@ -58,12 +63,21 @@
 }
 
 .btn {
+  font-size: 10px;
   margin: 10px;
-  padding: 10px;
-  border: 1px solid black;
-  border-radius: 5px;
-  background-color: #ffa200;
+  margin-left: 20px;
+  padding: 5px;
   color: white;
+  width: 50px;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  border-radius: 5px;
+  background: linear-gradient(145deg, #ffa300, #d88900);
+  box-shadow:  2px 2px 10px #a16600,
+             -2px -2px 10px #ffca00;
 }
 
 .forms {
@@ -73,6 +87,27 @@
   align-items: center;
   margin: 10px;
   padding: 10px;
-  border: 1px solid black;
   border-radius: 5px;
+  width: 50%;
+  border-radius: 32px;
+  background: linear-gradient(145deg, #02007c, #020094);
+  box-shadow:  13px 13px 26px #010062,
+               -13px -13px 26px #0300b2;
+}
+
+.formatForms {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.label {
+  font-size: 20px;
+  margin: 10px;
+  padding: 10px;
+  color: white;
 }
