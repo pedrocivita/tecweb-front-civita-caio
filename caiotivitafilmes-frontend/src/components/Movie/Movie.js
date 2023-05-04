@@ -7,29 +7,28 @@ function randomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-function Like(event, title){
-    console.log(title)
-      axios
-      .post("http://localhost:8000/movies/", {title: title})
-      .then((response) => {});
-    }
-
 export default function Movie(props) {
     const [rotation, setRotation] = useState(0);
     useEffect(() => {
       setRotation(randomInt(-5, 5));
     }, []);
+
+    function Like(event){
+      console.log(props.title)
+          axios
+          .post("http://localhost:8000/movies/", {title: props.title})
+          .then((response) => {});
+        }
   
   
     const style = { transform: `rotate(${rotation}deg)` };
     const classe = `card card-color-${randomInt(1, 5)}`;
-    
     return (
       <div className={classe} style={style}>
         <div className="card-action">
           <h3 className="card-title">{props.title}</h3>
-          <h onClick={Like(props.title)}>❤️</h>
-          <h>⭐</h>
+          <button onClick={Like}>❤️</button>
+          <button onClick={Like}>⭐</button>
         </div>
       </div>
     );
