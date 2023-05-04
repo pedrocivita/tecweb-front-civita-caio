@@ -1,3 +1,4 @@
+import './Movie.css';
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
@@ -31,8 +32,8 @@ export default function Movie(props) {
       <div className={classe} style={style}>
         <div className="card-action">
           <h3 className="card-title">{props.title}</h3>
-          <button onClick={Like}>❤️</button>
-          <button onClick={Delete}>K</button>
+          <button className='btnCard' onClick={Like}>❤️</button>
+
         </div>
       </div>
     );

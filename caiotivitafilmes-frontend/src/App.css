@@ -111,3 +111,16 @@
   padding: 10px;
   color: white;
 }
+
+.btnCard {
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #020094, #02007c);
+  box-shadow:  4px 4px 15px #01003f,
+               -4px -4px 15px #0300d5;
+}
