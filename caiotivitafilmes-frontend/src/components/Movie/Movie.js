@@ -19,12 +19,6 @@ export default function Movie(props) {
           .post("http://localhost:8000/movies/", {title: props.title})
           .then((response) => {});
         }
-
-    function Delete(event){
-          axios
-          .delete("http://localhost:8000/movie/" + props.title + "/")
-          .then((response) => {});
-        }
   
     const style = { transform: `rotate(${rotation}deg)` };
     const classe = `card card-color-${randomInt(1, 5)}`;
