@@ -14,12 +14,16 @@ export default function Movie(props) {
     }, []);
 
     function Like(event){
-      console.log(props.title)
           axios
           .post("http://localhost:8000/movies/", {title: props.title})
           .then((response) => {});
         }
-  
+
+    function Delete(event){
+          axios
+          .delete("http://localhost:8000/movie/" + props.title + "/")
+          .then((response) => {});
+        }
   
     const style = { transform: `rotate(${rotation}deg)` };
     const classe = `card card-color-${randomInt(1, 5)}`;
@@ -28,7 +32,7 @@ export default function Movie(props) {
         <div className="card-action">
           <h3 className="card-title">{props.title}</h3>
           <button onClick={Like}>❤️</button>
-          <button onClick={Like}>⭐</button>
+          <button onClick={Delete}>K</button>
         </div>
       </div>
     );
