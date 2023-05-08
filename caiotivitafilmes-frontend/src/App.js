@@ -7,13 +7,21 @@ import Modal from 'react-modal';
 
 const customStyles = {
   content: {
+    width: '70%',
+    height: '70%',
     top: '50%',
     left: '50%',
     right: 'auto',
     bottom: 'auto',
     marginRight: '-50%',
     transform: 'translate(-50%, -50%)',
+    background:'rgba(0, 0, 100, 0)',
+    border: 'none'
   },
+
+  overlay: {
+    backgroundColor: 'rgba(0, 0, 70, 0.8)'
+  }
 };
 
 Modal.setAppElement('#root');
@@ -63,7 +71,7 @@ function App() {
     
   const Filmes = () => {
     if (filmes.results === undefined) {
-      return <p className='label'>Digite o ano em que você nasceu!</p>
+      return <p className='label'>Select a year and choose your favorite movies!</p>
     }
     return filmes.results.map((filme) => {
       return (
@@ -87,9 +95,9 @@ function App() {
       }
 
       return(
-        <div className='body'>
+        <div className='bodyLikes'>
           <p class="mymovies">{like.title}</p>
-          <button onClick={Delete}>👹</button>
+          <button className="deleteBtn" onClick={Delete}>Delete</button>
         </div>
       )
     })
@@ -97,22 +105,31 @@ function App() {
 
   return (
     <div className="App">
-    <button onClick={openModal}>🎃</button>
+    <button className="btnFav" onClick={openModal}>⭐</button>
     <Modal
         isOpen={modalIsOpen}
         style={customStyles}
         onRequestClose={closeModal}
         contentLabel="Example Modal"
-    ><Likes/></Modal>
+    >
+      <div className="likes">
+        <div className="modalTitleBox">
+          <p className="label">Favorites</p>
+        </div>
+        <Likes/>
+      </div>
+      
+    </Modal>
     <form onSubmit= {Movile} >
       <div className='formatForms'>
         <div className='forms'>
-          <input placeholder='Digite um ano...' onChange={(event) => setAno(event.target.value)}/>
+          <input placeholder='Select a year...' onChange={(event) => setAno(event.target.value)}/>
           <button className='btn' type="submit"> GO </button>
         </div>
         </div>
     </form>
     <Filmes />
+    <p>Select a valid year, from 1960 to 2021!</p>
   </div>
   );
 }
