@@ -16,7 +16,9 @@ const customStyles = {
     marginRight: '-50%',
     transform: 'translate(-50%, -50%)',
     background:'rgba(0, 0, 100, 0)',
-    border: 'none'
+    borderRadius: '32px',
+    overflow: 'auto',
+    border: 'none',
   },
 
   overlay: {
@@ -90,7 +92,7 @@ function App() {
       function Delete(event){
         console.log("a")
         axios
-        .delete("http://localhost:8000/movie/" + like.title + "/")
+        .delete("http://localhost:8000/movie/" + encodeURIComponent(like.title) + "/")
         .then((response) => {GetFilmes()});
       }
 
@@ -112,11 +114,13 @@ function App() {
         onRequestClose={closeModal}
         contentLabel="Example Modal"
     >
-      <div className="likes">
-        <div className="modalTitleBox">
-          <p className="label">Favorites</p>
+      <div className="modal-scrollbar-container">
+        <div className="likes">
+          <div className="modalTitleBox">
+            <h2>My Movies</h2>
+          </div>
+          <Likes />
         </div>
-        <Likes/>
       </div>
       
     </Modal>
@@ -128,7 +132,9 @@ function App() {
         </div>
         </div>
     </form>
-    <Filmes />
+    <div className='format'>
+      <Filmes />
+    </div>
     <p>Select a valid year, from 1960 to 2021!</p>
   </div>
   );
