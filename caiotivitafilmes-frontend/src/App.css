@@ -92,6 +92,13 @@
              -2px -2px 10px #ffca00;
 }
 
+.btn:hover {
+  border-radius: 5px;
+  background: linear-gradient(145deg, #a46800, #8a5700);
+  box-shadow:  2px 2px 10px #825200,
+             -2px -2px 10px #b07000;
+}
+
 .forms {
   display: flex;
   flex-direction: row;
@@ -275,4 +282,62 @@
   background: linear-gradient(145deg, #cd8200, #a26700);
   box-shadow:  2px 2px 10px #7e5000,
              -2px -2px 10px #cfa600; /* Adjust border radius as desired */
+}
+
+@property --rotate {
+  syntax: "<angle>";
+  initial-value: 132deg;
+  inherits: false;
+}
+
+:root {
+  --card-height: 140px;
+  --card-width: calc(var(--card-height) / 1.5);
+}
+
+.card:hover {
+  color: rgb(255, 255, 255);
+  transition: color 1s;
+}
+.card:hover:before, .card:hover:after {
+  opacity: 1;
+}
+
+.card::before {
+  position: absolute;
+  opacity: 0;
+  animation: none;
+}
+
+.card::after {
+  position: absolute;
+  content: "";
+  left: -15%;
+  top: -15%;	
+  z-index: -10;
+  height: 130%;
+  width: 130%;
+  transform: scale(0.8);
+  filter: blur(calc(var(--card-height) / 6));
+  background-image: linear-gradient(
+    var(--rotate)
+    , #5ddcff, #3c67e3 43%, #4e00c2);
+    opacity: 1;
+  transition: opacity .5s;
+  animation: spin 2.5s linear infinite;
+  opacity: 0;
+}
+
+.btnCard:active {
+  transform: scale(0.8);
+  transition: transform 0.1s;
+}
+
+@keyframes spin {
+  0% {
+    --rotate: 0deg;
+  }
+  100% {
+    --rotate: 360deg;
+  }
 }
