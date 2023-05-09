@@ -312,11 +312,11 @@
 .card::after {
   position: absolute;
   content: "";
-  left: -15%;
-  top: -15%;	
-  z-index: -10;
-  height: 130%;
-  width: 130%;
+  left: -10%;
+  top: -12%;	
+  z-index: -1;
+  height: 120%;
+  width: 120%;
   transform: scale(0.8);
   filter: blur(calc(var(--card-height) / 6));
   background-image: linear-gradient(
@@ -329,8 +329,13 @@
 }
 
 .btnCard:active {
+  position: relative;
   transform: scale(0.8);
   transition: transform 0.1s;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #8d012b, #a80133);
+  box-shadow:  3px 3px 12px #5d011c,
+               -3px -3px 12px #dd0144;
 }
 
 @keyframes spin {
