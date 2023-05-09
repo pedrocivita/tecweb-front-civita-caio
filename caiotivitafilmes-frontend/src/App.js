@@ -8,7 +8,7 @@ import Modal from 'react-modal';
 const customStyles = {
   content: {
     width: '70%',
-    height: '70%',
+    height: '50%',
     top: '50%',
     left: '50%',
     right: 'auto',
@@ -90,7 +90,7 @@ function App() {
       function Delete(event){
         console.log("a")
         axios
-        .delete("http://localhost:8000/movie/" + like.title + "/")
+        .delete("http://localhost:8000/movie/" + encodeURIComponent(like.title) + "/")
         .then((response) => {GetFilmes()});
       }
 
@@ -128,7 +128,9 @@ function App() {
         </div>
         </div>
     </form>
-    <Filmes />
+    <div className='format'>
+      <Filmes />
+    </div>
     <p>Select a valid year, from 1960 to 2021!</p>
   </div>
   );

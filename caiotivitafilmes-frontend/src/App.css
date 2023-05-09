@@ -42,7 +42,8 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  width: 30%;
+  width: auto;
+  height: 100px;
   margin: 10px;
   padding: 10px;
   border-radius: 5px;
@@ -189,6 +190,8 @@
 }
 
 .likes {
+  height: auto;
+  width: 100%;
   color: white;
   font-family: 'Papyrus', fantasy;
   margin-top: 10px;
@@ -212,4 +215,12 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
+}
+
+.format {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
 }
