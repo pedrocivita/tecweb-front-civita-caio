@@ -14,3 +14,34 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* Customize the scrollbar container */
+body::-webkit-scrollbar,
+html::-webkit-scrollbar {
+  width: 5px; /* Adjust width as desired */
+}
+
+/* Customize the scrollbar track */
+body::-webkit-scrollbar-track,
+html::-webkit-scrollbar-track {
+  border-radius: 5px;
+  background: linear-gradient(145deg, #ffb434, #ffa202);
+  box-shadow:  2px 2px 10px #c97f00,
+             -2px -2px 10px #fbce1e; /* Adjust background color as desired */
+}
+
+/* Customize the scrollbar thumb */
+body::-webkit-scrollbar-thumb,
+html::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background: linear-gradient(145deg, #cd8200, #a26700);
+  box-shadow:  2px 2px 10px #7e5000,
+             -2px -2px 10px #cfa600; /* Adjust border radius as desired */
+}
+
+/* For Firefox */
+body,
+html {
+  scrollbar-width: thin; /* Adjust width as desired */
+  scrollbar-color: #1d1ac9 #020076; /* Adjust thumb and track colors as desired */
+}

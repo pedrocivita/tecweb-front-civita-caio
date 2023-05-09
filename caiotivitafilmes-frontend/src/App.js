@@ -16,7 +16,8 @@ const customStyles = {
     marginRight: '-50%',
     transform: 'translate(-50%, -50%)',
     background:'rgba(0, 0, 100, 0)',
-    border: 'none'
+    border: 'none',
+    overflow: 'auto',
   },
 
   overlay: {
@@ -112,11 +113,10 @@ function App() {
         onRequestClose={closeModal}
         contentLabel="Example Modal"
     >
-      <div className="likes">
-        <div className="modalTitleBox">
-          <p className="label">Favorites</p>
+      <div className="modal-scrollbar-container">
+        <div className="likes">
+          <Likes />
         </div>
-        <Likes/>
       </div>
       
     </Modal>
