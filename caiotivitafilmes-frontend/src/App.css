@@ -43,7 +43,7 @@
   justify-content: center;
   align-items: center;
   width: auto;
-  height: 100px;
+  height: 140px;
   margin: 10px;
   padding: 10px;
   border-radius: 5px;
@@ -131,10 +131,19 @@
   cursor: pointer;
   overflow: hidden;
   outline: none;
+  align-items: center;
+  justify-content: center;
   border-radius: 50%;
   background: linear-gradient(145deg, #020094, #02007c);
   box-shadow:  4px 4px 15px #01003f,
                -4px -4px 15px #0300d5;
+}
+
+.btnCard:hover {
+  border-radius: 50%;
+  background: #0f005c;
+  box-shadow:  4px 4px 15px #08002e,
+               -4px -4px 15px #17008a;
 }
 
 .mymovies {
@@ -157,9 +166,11 @@
 
 
 .btnFav {
-  margin-top: 10px;
+  margin-top: 15px;	
   background-color: transparent;
   background-repeat: no-repeat;
+  align-items: center;
+  justify-content: center;
   border: none;
   cursor: pointer;
   overflow: hidden;
@@ -168,6 +179,13 @@
   background: linear-gradient(145deg, #020094, #02007c);
   box-shadow:  4px 4px 15px #01003f,
                -4px -4px 15px #0300d5;
+}
+
+.btnFav:hover {
+  border-radius: 50%;
+  background: #0f005c;
+  box-shadow:  4px 4px 15px #08002e,
+               -4px -4px 15px #17008a;
 }
 
 .deleteBtn {
@@ -187,6 +205,13 @@
   background: linear-gradient(145deg, #020094, #02007c);
   box-shadow:  4px 4px 15px #01003f,
                -4px -4px 15px #0300d5;
+}
+
+.deleteBtn:hover {
+  border-radius: 10px;
+  background: #0f005c;
+  box-shadow:  4px 4px 15px #08002e,
+               -4px -4px 15px #17008a;
 }
 
 .likes {
@@ -228,6 +253,7 @@
 .modal-scrollbar-container {
   height: 100%;
   overflow-y: auto;
+  border-radius: 32px;
 }
 
 /* Customize the scrollbar container */

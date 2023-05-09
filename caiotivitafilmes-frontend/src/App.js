@@ -8,7 +8,7 @@ import Modal from 'react-modal';
 const customStyles = {
   content: {
     width: '70%',
-    height: '50%',
+    height: '70%',
     top: '50%',
     left: '50%',
     right: 'auto',
@@ -16,8 +16,9 @@ const customStyles = {
     marginRight: '-50%',
     transform: 'translate(-50%, -50%)',
     background:'rgba(0, 0, 100, 0)',
-    border: 'none',
+    borderRadius: '32px',
     overflow: 'auto',
+    border: 'none',
   },
 
   overlay: {
@@ -115,6 +116,9 @@ function App() {
     >
       <div className="modal-scrollbar-container">
         <div className="likes">
+          <div className="modalTitleBox">
+            <h2>My Movies</h2>
+          </div>
           <Likes />
         </div>
       </div>
