@@ -55,7 +55,7 @@ function App() {
 
   function GetFilmes(event){
       axios
-      .get("http://localhost:8000/movies/")
+      .get("https://tecweb-back-civita-caio-production.up.railway.app/movies/")
       .then((response) => {
         setLikes(response.data);
       });
@@ -92,7 +92,7 @@ function App() {
       function Delete(event){
         console.log("a")
         axios
-        .delete("http://localhost:8000/movie/" + encodeURIComponent(like.title) + "/")
+        .delete("https://tecweb-back-civita-caio-production.up.railway.app/movie/" + encodeURIComponent(like.title) + "/")
         .then((response) => {GetFilmes()});
       }
 

@@ -16,7 +16,7 @@ export default function Movie(props) {
 
     function Like(event){
           axios
-          .post("http://localhost:8000/movies/", {title: props.title})
+          .post("https://tecweb-back-civita-caio-production.up.railway.app/movies/", {title: props.title})
           .then((response) => {});
         }
   
